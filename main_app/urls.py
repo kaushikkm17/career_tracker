@@ -10,4 +10,5 @@ urlpatterns = [
     path('events/', views.events, name='events'),
     path('skills/', views.skills, name='skills'),
     path('search_parameters/', views.search_parameters, name='search_parameters'),
+    path('accounts/signup', views.signup, name='signup'),
 ]

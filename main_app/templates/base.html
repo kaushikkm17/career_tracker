@@ -12,12 +12,18 @@
     <header>
         <nav>
             <ul>
+                {% if user.is_authenticated %}
                 <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
                 <li><a href="{% url 'todo' %}">Todo</a></li>
                 <li><a href="{% url 'connections_index' %}">Connections</a></li>
                 <li><a href="{% url 'events' %}">Events</a></li>
                 <li><a href="{% url 'skills' %}">Skills</a></li>
                 <li><a href="{% url 'search_parameters' %}">Search Parameters</a></li>
+                {% else %}
+                <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+
             </ul>
         </nav>
     </header>
