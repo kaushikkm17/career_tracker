@@ -45,8 +45,8 @@ class Event(models.Model):
 
 #search parameters will only be updated
 class Search_Parameters(models.Model):
-    job_titles = models.TextField(max_length=250)
-    job_boards = models.TextField(max_length=250)
-    keywords = models.TextField(max_length=250)
-    exclude_keywords = models.TextField(max_length=250)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    job_titles = models.TextField(max_length=250, default="")
+    job_boards = models.TextField(max_length=250, default="")
+    keywords = models.TextField(max_length=250, default="")
+    exclude_keywords = models.TextField(max_length=250, default="")
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='search_params')
