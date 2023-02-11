@@ -1,4 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>events index page</h1>
+<section>
+    {% for event in events %}
+    <div>
+        <h2>{{ event.name }}</h2>
+        <h3>{{ event.date }}</h3>
+        <p>{{ event.summary }}</p>
+        <a href="{% url 'events_update' event.id %}">
+            <button>Edit</button>
+        </a>
+        <a href="{% url 'events_delete' event.id %}">
+            <button>Delete</button>
+        </a>
+    </div>
+    {% endfor %}
+</section>
+<a href="{% url 'events_create' %}">
+    <button>Add New Event</button>
+</a>
 {% endblock %}
