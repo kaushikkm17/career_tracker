@@ -1,4 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>dashboard page</h1>
+<a href="{% url 'todos_index' %}">
+    <div style="width:200px; height:200px; background-color:rgb(81, 168, 241); margin: 5px;">
+        TODOS
+    </div>
+</a>
+<a href="{% url 'connections_index' %}">
+    <div style="width:200px; height:200px; background-color:rgb(81, 168, 241); margin: 5px;">
+        CONNECTIONS
+    </div>
+</a>
+<a href="{% url 'events_index' %}">
+    <div style="width:200px; height:200px; background-color:rgb(81, 168, 241); margin: 5px;">
+        EVENTS
+    </div>
+</a>
+<a href="{% url 'skills_index' %}">
+    <div style="width:200px; height:200px; background-color:rgb(81, 168, 241); margin: 5px;">
+        SKILLS
+    </div>
+</a>
+<a href="{% url 'search_parameters_index' %}">
+    <div style="width:200px; height:200px; background-color:rgb(81, 168, 241); margin: 5px;">
+        SEARCH PARAMETERS
+    </div>
+</a>
 {% endblock %}

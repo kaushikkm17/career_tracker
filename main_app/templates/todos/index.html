@@ -1,4 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>todos index page</h1>
+
+<h1>todos index page {{todo.id}}</h1>
+<table>
+    <tr>
+        <th>Task</th>
+        <th>Complete By</th>
+        <th>Status</th>
+    </tr>    
+{% for todo in todos %}
+    <tr>
+        <td>{{ todo.name }}</td>
+        <td>{{ todo.complete_by_date }}</td>
+        <td>
+            {%if todo.complete %}
+                Done
+            {% else %}
+                Incomplete
+            {% endif %}
+        </td>
+        <td><a href="{% url 'todos_update' todo.id %}">Edit</a></td>
+        <td><a href="{% url 'todos_delete' todo.id %}">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{% url 'todos_create' %}">
+    <button>Add New Task</button>
+</a>
 {% endblock %}

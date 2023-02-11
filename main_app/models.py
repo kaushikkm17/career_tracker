@@ -15,7 +15,7 @@ class Connection(models.Model):
         return self.name
         
     def get_absolute_url(self):
-        return reverse('connection_detail', kwargs={'connection_id': self.id})
+        return reverse('connections_detail', kwargs={'connection_id': self.id})
 
 class Skill(models.Model):
     name = models.CharField(max_length=25)
@@ -24,6 +24,9 @@ class Skill(models.Model):
 
     def __str__(self):
         return self.name
+    
+    def get_absolute_url(self):
+        return reverse('skills_detail', kwargs={'pk': self.id})
 
 class Todo(models.Model):
     name = models.CharField(max_length=50, null=False)
@@ -34,6 +37,9 @@ class Todo(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('todos_detail', kwargs={'pk': self.id})
+
 class Event(models.Model):
     name = models.CharField(max_length=25)
     date = models.DateField()
@@ -42,6 +48,9 @@ class Event(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('events_detail', kwargs={'pk': self.id})
 
 #search parameters will only be updated
 class Search_Parameters(models.Model):

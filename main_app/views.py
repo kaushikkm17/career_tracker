@@ -4,6 +4,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
 from .models import Connection, Skill, Todo, Event, Search_Parameters
 
 # Create your views here.
@@ -17,7 +18,7 @@ def dashboard(request):
 @login_required
 def todos_index(request):
     todos = Todo.objects.filter(user=request.user)
-    return render(request, 'todos.html', {'todos': todos})
+    return render(request, 'todos/index.html', {'todos': todos})
 
 @login_required
 def connections_index(request):
@@ -71,6 +72,8 @@ class TodoDetail(LoginRequiredMixin, DetailView):
 class TodoUpdate(LoginRequiredMixin, UpdateView):
     model = Todo
     fields = ['name', 'complete_by_date', 'complete']
+    template_name = 'main_app/todo_form.html'
+    success_url = reverse_lazy('todos_index')
 
 class TodoDelete(LoginRequiredMixin, DeleteView):
     model = Todo

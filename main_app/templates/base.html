@@ -14,11 +14,11 @@
             <ul>
                 {% if user.is_authenticated %}
                 <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
-                <li><a href="{% url 'todo' %}">Todo</a></li>
+                <li><a href="{% url 'todos_index' %}">Todo</a></li>
                 <li><a href="{% url 'connections_index' %}">Connections</a></li>
-                <li><a href="{% url 'events' %}">Events</a></li>
-                <li><a href="{% url 'skills' %}">Skills</a></li>
-                <li><a href="{% url 'search_parameters' %}">Search Parameters</a></li>
+                <li><a href="{% url 'events_index' %}">Events</a></li>
+                <li><a href="{% url 'skills_index' %}">Skills</a></li>
+                <li><a href="{% url 'search_parameters_index' %}">Search Parameters</a></li>
                 <li><a href="{% url 'logout' %}">Logout</a></li>
                 {% else %}
                 <li><a href="{% url 'signup' %}">Sign Up</a></li>
@@ -29,6 +29,6 @@
         </nav>
     </header>
     <main>{% block content %} {% endblock %}</main>
-    <footer>All Rights Reserved, © 2023 Career Tracker</footer>
+    <footer>Copyright © 2023 Career Tracker. All Rights Reserved</footer>
 </body>
 </html>
