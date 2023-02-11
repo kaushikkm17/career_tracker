@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>connections detail page</h1>
+<h2><a href="{% url 'connections_index' %}">Back to all connections</a></h2>
+<section>
+    <p>Email: {{ object.email }}</p>
+    <p>Phone Number: {{ object.phone_number }}</p>
+    <p>Linkedin: {{ object.linkedin_url }}</p>
+    <p>Last Contacted: {{ object.date_contacted }}</p>
+</section>
+<section>
+    <p>Summary: {{ object.summary }}</p>
+</section>
+<section>
+    <a href="{% url 'connections_update' object.id %}"><button>Edit</button></a>
+    <a href="{% url 'connections_delete' object.id %}"><button>Delete</button></a>
+</section>
+{% endblock %}

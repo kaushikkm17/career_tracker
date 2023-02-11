@@ -1,4 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <h1>connections index page</h1>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Last Contacted</th>
+    </tr>    
+{% for connection in connections %}
+    <tr>
+        <td>{{ connection.name }}</td>
+        <td>{{ connection.date_contacted }}</td>
+        <td><a href="{% url 'connections_detail' connection.id %}">View</a></td>
+        <td><a href="{% url 'connections_update' connection.id %}">Edit</a></td>
+        <td><a href="{% url 'connections_delete' connection.id %}">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{% url 'connections_create' %}">
+    <button>Add New Connection</button>
+</a>
 {% endblock %}

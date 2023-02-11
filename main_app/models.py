@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class Connection(models.Model):
     name = models.CharField(max_length=25, null=False)
     email = models.EmailField(max_length=50)
-    phone_number = models.TextField(max_length=25)
+    phone_number = models.CharField(max_length=25)
     linkedin_url = models.CharField(max_length=150)
     date_contacted = models.DateField('last contacted on', null=False)
     summary = models.TextField(max_length=250)

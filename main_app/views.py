@@ -71,8 +71,8 @@ class TodoDetail(LoginRequiredMixin, DetailView):
 
 class TodoUpdate(LoginRequiredMixin, UpdateView):
     model = Todo
-    fields = ['name', 'complete_by_date', 'complete']
     template_name = 'main_app/todo_form.html'
+    fields = ['name', 'complete_by_date', 'complete']
     success_url = reverse_lazy('todos_index')
 
 class TodoDelete(LoginRequiredMixin, DeleteView):
@@ -94,6 +94,8 @@ class ConnectionDetail(LoginRequiredMixin, DetailView):
 class ConnectionUpdate(LoginRequiredMixin, UpdateView):
     model = Connection
     fields = ['name', 'email', 'phone_number', 'linkedin_url', 'date_contacted', 'summary']
+    template_name = 'main_app/connection_form.html'
+    success_url = reverse_lazy('connections_index')
 
 class ConnectionDelete(LoginRequiredMixin, DeleteView):
     model = Connection
