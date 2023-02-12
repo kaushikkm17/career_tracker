@@ -6,29 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Career Tracker</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css/' %}" />
 </head>
-<body>
+<body class="bg-gradient-to-r from-indigo-600 to-purple-500">
     <header>
-        <nav>
-            <ul>
+        <nav class="bg-gray-900 p-4 flex items-center justify-between">
+            <a href="{% url 'home' %}" class="text-white font-medium mr-6">Career Tracker</a>
+            <ul class="flex">
                 {% if user.is_authenticated %}
-                <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
-                <li><a href="{% url 'todos_index' %}">Todo</a></li>
-                <li><a href="{% url 'connections_index' %}">Connections</a></li>
-                <li><a href="{% url 'events_index' %}">Events</a></li>
-                <li><a href="{% url 'skills_index' %}">Skills</a></li>
-                <li><a href="{% url 'search_parameters_index' %}">Search Parameters</a></li>
-                <li><a href="{% url 'logout' %}">Logout</a></li>
+                <li class="inline-block mr-4">
+                    <a href="{% url 'dashboard' %}" class="text-white font-medium">Dashboard</a>
+                </li>
+                <li class="inline-block">
+                    <a href="{% url 'logout' %}" class="text-white font-medium">Logout</a>
+                </li>
                 {% else %}
-                <li><a href="{% url 'signup' %}">Sign Up</a></li>
-                <li><a href="{% url 'login' %}">Login</a></li>
+                <li class="inline-block mr-4">
+                    <a href="{% url 'signup' %}" class="text-white font-medium">Sign Up</a>
+                </li>
+                <li class="inline-block">
+                    <a href="{% url 'login' %}" class="text-white font-medium">Login</a>
+                </li>
                 {% endif %}
-
             </ul>
-        </nav>
+          </nav>          
+          
     </header>
     <main>{% block content %} {% endblock %}</main>
-    <footer>Copyright © 2023 Career Tracker. All Rights Reserved</footer>
+    <footer class="bg-gray-900 text-white text-center py-4 fixed bottom-0 w-full">
+        Copyright © 2023 Career Tracker. All Rights Reserved
+    </footer>
+      
 </body>
 </html>

@@ -1,0 +1,40 @@
+input[type=text], 
+input[type=password]{
+    width: 100%;
+    padding:8px;
+    border-radius: 5px;
+    display:block;
+    background-color: rgb(220, 220, 220);
+}
+input[type=submit]{
+    background-color: rgb(108, 0, 186);
+    padding:0.3em 1.6em;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+input[type=submit]:hover{
+    cursor: pointer;
+    background-color: rgb(88, 0, 151);
+}
+
+.authentication-form > ul > li,
+.helptext{
+    font-size: 0.8em;
+    display:block;
+    color: rgb(254, 254, 217);
+}
+.authentication-form{
+    margin: 2em auto;
+    padding: 3em;
+}
+.authentication-form > p{
+    padding-bottom: 10px;
+}
+
+.authentication-form > p > label{
+    color:rgb(108, 0, 186);
+    font-size: 1.7em;
+    font-weight: bold;
+}
