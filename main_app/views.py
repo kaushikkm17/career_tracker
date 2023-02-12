@@ -38,7 +38,7 @@ def skills_index(request):
 
 @login_required
 def search_parameters_index(request):
-    search_parameters = Search_Parameters.objects.filter(user=request.user)
+    search_parameters = Search_Parameters.objects.filter(user=request.user).first()
     return render(request, 'search_parameters/index.html', {'search_parameters': search_parameters})
     
 
@@ -135,6 +135,7 @@ class SkillDetail(LoginRequiredMixin, DetailView):
 class SkillUpdate(LoginRequiredMixin, UpdateView):
     model = Skill
     fields = ['name', 'completed']
+    success_url = reverse_lazy('skills_index')
 
 class SkillDelete(LoginRequiredMixin, DeleteView):
     model = Skill
@@ -153,4 +154,5 @@ class SearchParametersCreate(LoginRequiredMixin, CreateView):
 class SearchParametersUpdate(LoginRequiredMixin, UpdateView):
     model = Search_Parameters
     fields = ['job_titles', 'job_boards', 'keywords', 'exclude_keywords']
+    success_url = reverse_lazy('search_parameters_index')
 

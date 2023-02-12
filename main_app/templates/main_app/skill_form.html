@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action='' method='POST'>
+    {% csrf_token %}
+    {% if object %}
+    <h1>Edit {{object.name}}</h1>
+    {% else %}
+    <h1>Add New Skill</h1>
+    {% endif %}
+    <table>
+        {{form.as_table}}
+    </table>
+    <input type='submit' value='Submit'/>
+</form>
+
+
+
+{% endblock %}

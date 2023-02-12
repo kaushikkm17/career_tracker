@@ -1,4 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1> Search Parameters page</h1>
+<h1>Search Parameters page</h1>
+
+{%if search_parameters%}
+    <h2>Job Titles</h2>
+    <div>{{ search_parameters.job_titles }}</div>
+    <h2>Job Boards</h2>
+    <div>{{ search_parameters.job_boards }}</div>
+    <h2>Keywords</h2>
+    <div>{{ search_parameters.keywords }}</div>
+    <h2>Keywords To Exclude</h2>
+    <div>{{ search_parameters.exclude_keywords }}</div>
+    <a href="{% url 'search_parameters_update' search_parameters.id%}"><button>Edit Search Parameters</button></a>
+{% else %}
+    <a href="{% url 'search_parameters_create' %}"><button>Add Search Parameters</button></a>    
+{% endif %}
 {% endblock %}
