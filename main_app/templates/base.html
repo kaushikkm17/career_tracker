@@ -12,7 +12,7 @@
 <body class="bg-gradient-to-r from-indigo-600 to-purple-500">
     <header>
         <nav class="bg-gray-900 p-4 flex items-center justify-between">
-            <a href="{% url 'home' %}" class="text-white font-medium mr-6">Career Tracker</a>
+            <a href="{% url 'home' %}" class="text-white mr-6 font-bold">Career Tracker</a>
             <ul class="flex">
                 {% if user.is_authenticated %}
                 <li class="inline-block mr-4">
@@ -31,9 +31,10 @@
                 {% endif %}
             </ul>
           </nav>          
-          
     </header>
-    <main>{% block content %} {% endblock %}</main>
+    <main>
+        {% block content %} {% endblock %}
+    </main>
     <footer class="bg-gray-900 text-white text-center py-4 fixed bottom-0 w-full">
         Copyright © 2023 Career Tracker. All Rights Reserved
     </footer>

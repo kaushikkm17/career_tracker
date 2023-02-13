@@ -1,17 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
-<form action='' method='POST'>
-    {% csrf_token %}
-    {% if object %}
-    <h1>Edit {{object.name}}</h1>
-    {% else %}
-    <h1>Add New Skill</h1>
-    {% endif %}
-    <table>
-        {{form.as_table}}
-    </table>
-    <input type='submit' value='Submit'/>
-</form>
+<div class="flex justify-center m-20">
+    <form action='' method='POST' class="justify-center">
+        {% csrf_token %}
+        {% if object %}
+        <h1 class="text-center font-bold text-xl m-4">Edit {{object.name}}</h1>
+        {% else %}
+        <h1 class="text-center font-bold text-xl m-4">Add New Skill</h1>
+        {% endif %}
+        <table class="m-auto">
+            {{form.as_table}}
+        </table>
+        <div class="flex justify-center m-8">
+            <input type='submit' value='Submit' class="justify-center"/>
+            
+        </div>
+    </form>
+</div>
 
 
 

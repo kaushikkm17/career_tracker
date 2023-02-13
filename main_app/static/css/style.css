@@ -1,10 +1,14 @@
 input[type=text], 
-input[type=password]{
+input[type=password],
+input[type=email],
+textarea
+{
     width: 100%;
     padding:8px;
     border-radius: 5px;
     display:block;
     background-color: rgb(220, 220, 220);
+    color: black;
 }
 input[type=submit]{
     background-color: rgb(108, 0, 186);
@@ -37,4 +41,8 @@ input[type=submit]:hover{
     color:rgb(108, 0, 186);
     font-size: 1.7em;
     font-weight: bold;
+}
+
+.sp-table textarea{
+    height: 60px
 }

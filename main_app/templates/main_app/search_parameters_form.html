@@ -3,14 +3,14 @@
 <form action='' method='POST'>
     {% csrf_token %}
     {% if object %}
-    <h1>Edit Search Parameters</h1>
+    <h1 class="font-bold text-center mt-10 text-2xl">Edit Search Parameters</h1>
     {% else %}
-    <h1>Add Search Parameters</h1>
+    <h1 class="font-bold text-center mt-10 text-2xl">Add Search Parameters</h1>
     {% endif %}
-    <table>
+    <table class="sp-table mx-auto my-20">
         {{form.as_table}}
     </table>
-    <input type='submit' value='Submit'/>
+    <input type='submit' value='Submit' class="flex mx-auto"/>
 </form>
 
 

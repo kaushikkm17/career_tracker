@@ -1,18 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>connections detail page</h1>
-<h2><a href="{% url 'connections_index' %}">Back to all connections</a></h2>
-<section>
-    <p>Email: {{ object.email }}</p>
-    <p>Phone Number: {{ object.phone_number }}</p>
-    <p>Linkedin: {{ object.linkedin_url }}</p>
-    <p>Last Contacted: {{ object.date_contacted }}</p>
-</section>
-<section>
-    <p>Summary: {{ object.summary }}</p>
-</section>
-<section>
-    <a href="{% url 'connections_update' object.id %}"><button>Edit</button></a>
-    <a href="{% url 'connections_delete' object.id %}"><button>Delete</button></a>
+<a href="{% url 'connections_index' %}">
+    <button class="px-5 py-2 m-10 bg-indigo-700 text-gray-200 font-bold rounded-lg text-sm hover:bg-blue-600">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 9l-3 3m0 0l3 3m-3-3h7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>  
+        Back to all connections
+    </button>
+</a>
+<h1 class="text-center text-2xl font-bold">{{ object.name }}</h1>
+<div class="flex flex-wrap justify-center font-bold">
+    <section class="m-4 bg-violet-600 w-80 h-60 p-4 rounded-2xl">
+        <p class="my-2">Email: {{ object.email }}</p>
+        <p class="my-2">Phone Number: {{ object.phone_number }}</p>
+        <p class="my-2">Linkedin: {{ object.linkedin_url }}</p>
+        <p class="my-2">Last Contacted: {{ object.date_contacted }}</p>
+    </section class="m-4">
+    <section class="m-4 bg-purple-600 w-80 h-60 p-4 rounded-2xl">
+        <p>Summary: {{ object.summary }}</p>
+    </section>
+</div>
+<section class="flex justify-center">
+    <a href="{% url 'connections_update' object.id %}" class="px-4 py-2 ml-2 rounded-3xl bg-indigo-600 hover:bg-indigo-700"><button>Edit</button></a>
+    <a href="{% url 'connections_delete' object.id %}"  class="px-4 py-2 ml-2 rounded-3xl bg-purple-700 hover:bg-purple-800"><button>Delete</button></a>
 </section>
 {% endblock %}

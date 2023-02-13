@@ -1,22 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>events index page</h1>
-<section>
-    {% for event in events %}
-    <div>
-        <h2>{{ event.name }}</h2>
-        <h3>{{ event.date }}</h3>
+<a href="{% url 'dashboard' %}">
+    <button class="px-5 py-2 m-10 bg-indigo-700 text-gray-200 font-bold rounded-lg text-sm hover:bg-blue-600">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 9l-3 3m0 0l3 3m-3-3h7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>  
+        Back to dashboard
+    </button>
+</a>
+{% for event in events %}
+<section class="flex flex-wrap p-20 justify-center">
+    <div class="bg-purple-600 p-4 rounded-2xl">
+        <h2 class="font-bold text-lg">{{ event.name }}</h2>
+        <h3 class="text-gray-800">{{ event.date }}</h3>
         <p>{{ event.summary }}</p>
         <a href="{% url 'events_update' event.id %}">
-            <button>Edit</button>
+            <button class="px-4 ml-2 mt-4 rounded-3xl bg-indigo-600 hover:bg-indigo-700">Edit</button>
         </a>
         <a href="{% url 'events_delete' event.id %}">
-            <button>Delete</button>
+            <button class="px-4 ml-2 mt-4 rounded-3xl bg-indigo-600 hover:bg-indigo-700">Delete</button>
         </a>
     </div>
     {% endfor %}
 </section>
-<a href="{% url 'events_create' %}">
-    <button>Add New Event</button>
+<a href="{% url 'events_create' %}" class="flex justify-center">
+    <button class="block px-5 py-3 my-10 bg-indigo-700 text-gray-200 font-bold rounded-lg hover:bg-blue-600">Add New Event</button>
 </a>
+
 {% endblock %}
