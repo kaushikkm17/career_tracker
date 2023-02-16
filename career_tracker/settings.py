@@ -82,6 +82,9 @@ DATABASES = {
         'PASSWORD': os.environ.get('PASSWORD'),
         'HOST': 'db.bit.io',
         'PORT': '5432',
+        'OPTIONS': {
+            'sslmode': 'require',
+        },
     }
 }
 

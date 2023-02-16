@@ -10,6 +10,9 @@ Searching for a job can be difficult and involve many different things. Use this
 - CSS3
 - Heroicons
 
+
+![screenshot](/static/images/home)
+
 # Getting Started:
 Click [here](https://careertracker.herokuapp.com/) to see the deployed app
 
