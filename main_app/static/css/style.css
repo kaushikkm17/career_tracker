@@ -46,3 +46,9 @@ input[type=submit]:hover{
 .sp-table textarea{
     height: 60px
 }
+@media screen and (max-width: 320px) {
+    footer{
+        position: static;
+        margin-top: 2rem;
+    }
+}
