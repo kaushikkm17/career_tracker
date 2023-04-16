@@ -3,14 +3,7 @@ Searching for a job can be difficult and involve many different things. Use this
 # Getting Started:
 Click [here](https://careertracker.herokuapp.com/) to see the deployed app
 # Technologies used
-<img src="https://img.shields.io/badge/Django-000000?style=for-the-badge&logo=Django&logoColor=90a4fc" alt="badge"/>
-<img src="https://img.shields.io/badge/Tailwind-000000?style=for-the-badge&logo=tailwindcss&logoColor=90a4fc" alt="badge"/>
-<img src="https://img.shields.io/badge/PostgreSQL-000000?style=for-the-badge&logo=postgresql&logoColor=90a4fc" alt="badge"/>
-<img src="https://img.shields.io/badge/HTML-000000?style=for-the-badge&logo=HTML5&logoColor=90a4fc" alt="badge"/>
-<img src="https://img.shields.io/badge/CSS-000000?style=for-the-badge&logo=CSS3&logoColor=90a4fc" alt="badge"/>
-<img src="https://img.shields.io/badge/Heroku-000000?style=for-the-badge&logo=heroku&logoColor=90a4fc" alt="badge"/>
-<img src="https://img.shields.io/badge/Bit.io-000000?style=for-the-badge" alt="badge"/>
-<img src="https://img.shields.io/badge/Heroicons-000000?style=for-the-badge" alt="badge"/>
+<img src="https://img.shields.io/badge/Django-000000?style=for-the-badge&logo=Django&logoColor=90a4fc" alt="badge"/> <img src="https://img.shields.io/badge/Tailwind-000000?style=for-the-badge&logo=tailwindcss&logoColor=90a4fc" alt="badge"/> <img src="https://img.shields.io/badge/PostgreSQL-000000?style=for-the-badge&logo=postgresql&logoColor=90a4fc" alt="badge"/> <img src="https://img.shields.io/badge/HTML-000000?style=for-the-badge&logo=HTML5&logoColor=90a4fc" alt="badge"/> <img src="https://img.shields.io/badge/CSS-000000?style=for-the-badge&logo=CSS3&logoColor=90a4fc" alt="badge"/> <img src="https://img.shields.io/badge/Heroku-000000?style=for-the-badge&logo=heroku&logoColor=90a4fc" alt="badge"/> <img src="https://img.shields.io/badge/Bit.io-000000?style=for-the-badge" alt="badge"/> <img src="https://img.shields.io/badge/Heroicons-000000?style=for-the-badge" alt="badge"/>
 
 ### Instructions
 - Click `Get Started` to create an account
